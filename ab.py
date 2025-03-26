@@ -6,6 +6,7 @@ import plotly.express as px
 import pandas as pd
 
 app = dash.Dash(__name__)
+server= app.server
 
 data = {
     'area' : [100, 200, 300, 400, 500],
@@ -42,4 +43,4 @@ def update_graph(graph_type):
 
     return fig
 
-app.run(debug= True)
+app.run(debug= True, port=8505,host='0.0.0.0')
